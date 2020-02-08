@@ -1,12 +1,20 @@
+% Simple Resume Template by David Vella
+
+% DOCUMENT CONFIGURATION
 \documentclass[12pt]{article}
 
 \usepackage[letterpaper]{geometry}
 \usepackage{times}
 \usepackage{setspace}
 \usepackage{lipsum}
+\usepackage{enumitem}
+
 \linespread{1.0}
 \geometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
+\pagenumbering{gobble}
 
+
+% HELPER COMMANDS & ENVIRONMENTS
 \newcommand{\rheader}[1] { 
     \noindent{ \large \textbf{#1} \par }
     \vspace{-10pt}
@@ -14,8 +22,11 @@
 }
 
 \newcommand{\rdate}[1]{
-    \hfill
-    \textit{#1}
+    \hfill \textit{#1}
+}
+
+\newcommand{\ritem} {
+    \vspace{-10pt} \item
 }
 
 \newenvironment{rsection} {
@@ -26,11 +37,20 @@
     \par \medskip
 }
 
+\newenvironment{rlist} {
+    \begin{enumerate}[leftmargin=0.75in, label=$\bullet$]
+} {
+    \end{enumerate}
+    \vspace{-10pt}
+}
 
+
+% START OF DOCUMENT
 \begin{document}
 
+% LETTERHEAD
 \begin{center}
-    {\LARGE David Vella \par}
+    {\Large \textbf{David Vella} \par}
     \vspace{5pt}
     248-760-4439 $\cdot$ davella@umich.edu \\
     7000 Willowing Oak Dr, White Lake, MI
@@ -39,8 +59,49 @@
 \rheader{EDUCATION}
 \begin{rsection}
     University of Michigan, Ann Arbor, MI \rdate{Exptected Graduation: Apr 2023} \\
-    Studying Computer Science and Engineering \rdate{GPA: 4.00 / 4.00}
+    Studying Computer Science and Engineering \rdate{GPA: 4.00 / 4.00} \\
+
+    \vspace{-10pt}
+
+    \noindent Coursework: \\
+    EECS 280 Programming and Data Structures \rdate{Winter 2020}
+    \begin{rlist}
+        \ritem here is an item
+    \end{rlist}
+    ENGR 100 Intro Engineering Section 400 Autonomous Systems \rdate{Fall 2019}
+    \begin{rlist}
+        \ritem hello there
+        \ritem hello there
+    \end{rlist}
+    ENGR 101 Intro Programming \rdate{Fall 2019}
+    \begin{rlist}
+        \ritem here is an item
+    \end{rlist}
 \end{rsection}
 
+
+\rheader{PROJECT EXPERIENCE}
+\begin{rsection}
+    Mracing FSAE \rdate{2001-2019}
+    \begin{rlist}
+        \ritem this is an item
+        \ritem this is another item
+    \end{rlist}
+\end{rsection}
+
+
+\rheader{PERSONAL PROJECTS}
+\begin{rsection}
+    Flask Web App
+\end{rsection}
+\begin{rsection}
+    Flight Controller for Radio Control Aircraft
+\end{rsection}
+
+
+\rheader{SKILLS}
+
+
+\rheader{ACTIVIES}
 
 \end{document}
