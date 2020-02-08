@@ -8,6 +8,7 @@
 \usepackage{setspace}
 \usepackage{lipsum}
 \usepackage{enumitem}
+\usepackage{tabularx}
 
 \linespread{1.0}
 \geometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
@@ -30,11 +31,13 @@
 }
 
 \newenvironment{rsection} {
+    \vspace{-5pt}
     \par \medskip
     \leftskip=2em
     \noindent \ignorespaces
 } {
     \par \medskip
+    \vspace{5pt}
 }
 
 \newenvironment{rlist} {
@@ -43,6 +46,7 @@
     \end{enumerate}
     \vspace{-10pt}
 }
+
 
 
 % START OF DOCUMENT
@@ -56,52 +60,81 @@
     7000 Willowing Oak Dr, White Lake, MI
 \end{center}
 
+
 \rheader{EDUCATION}
 \begin{rsection}
     University of Michigan, Ann Arbor, MI \rdate{Exptected Graduation: Apr 2023} \\
-    Studying Computer Science and Engineering \rdate{GPA: 4.00 / 4.00} \\
-
-    \vspace{-10pt}
-
+    Studying Computer Science and Engineering \rdate{GPA: 4.00 / 4.00}
+    \vspace{5pt} \\
     \noindent Coursework: \\
     EECS 280 Programming and Data Structures \rdate{Winter 2020}
     \begin{rlist}
-        \ritem here is an item
+        \ritem Algorithms, abstract and structured data types, recursion, pointers, testing and debugging
+        \ritem Large programming projects in C++
     \end{rlist}
     ENGR 100 Intro Engineering Section 400 Autonomous Systems \rdate{Fall 2019}
     \begin{rlist}
-        \ritem hello there
-        \ritem hello there
+        \ritem Worked in a team to develop and implement control algorithms enabling a quadcopter to autonomously navigate a maze
+        \ritem Wrote reports and delivered presentations on our teams progress and results
+        \ritem Programming in C++ and control system simulation using MATLAB 
+        %\ritem PID Controllers, digital and analog filters, IMU, ultrasonic and LiDAR sensors
     \end{rlist}
     ENGR 101 Intro Programming \rdate{Fall 2019}
     \begin{rlist}
-        \ritem here is an item
+        \ritem MATLAB, C++, data structures, algorithms, testing and debugging, style 
     \end{rlist}
 \end{rsection}
 
 
 \rheader{PROJECT EXPERIENCE}
 \begin{rsection}
-    Mracing FSAE \rdate{2001-2019}
+    FTC Robotics Team \#12505 -- Student Mentor \rdate{Sept 2018 -- Apr 2019}
     \begin{rlist}
-        \ritem this is an item
-        \ritem this is another item
+        \ritem Volunteered as a mentor to help my former middle school start a robotics team.
+        \ritem Guided middle school students design and assembly of the robot using my experience from high school robotics.
+    \end{rlist}
+    FRC Robotics Team \#67 -- Electrical \& Controls Lead \rdate{Jan 2015 -- Apr 2019}
+    \begin{rlist}
+        \ritem Led students through design and assembly of the robot's electrical and control system
+        \ritem Quickly diagnosed and resolved electrical and software issues during competition
+        \ritem Drove the robot during competition
     \end{rlist}
 \end{rsection}
 
 
 \rheader{PERSONAL PROJECTS}
 \begin{rsection}
-    Flask Web App
+    Snake Game Flask Web App \rdate{Dec 2019 -- Present}
+    \begin{rlist}
+        \ritem Built a web app using Flask in Python
+        \ritem Implemented leaderboard system using SQLAlchemy
+    \end{rlist}
+    Tic-Tac-Toe AI \rdate{Aug 2019 -- Dec 2019}
+    \begin{rlist}
+        \ritem Implemented various algorithms using Python to create a bot that never loses tic-tac-toe
+    \end{rlist}
+    Flight Controller for Radio Control Aircraft \rdate{Aug 2018 -- Aug 2019}
+    \begin{rlist}
+        \ritem Developed and implemented control algorithms for flight stabilization or radio control aircraft
+        \ritem Programmed an Arduino microcontroller in C++ to read IMU data, decode user input signals, and actuate servo motors
+    \end{rlist}
 \end{rsection}
-\begin{rsection}
-    Flight Controller for Radio Control Aircraft
-\end{rsection}
+
 
 
 \rheader{SKILLS}
+\begin{rsection}
+    \begin{tabularx}{\textwidth}{ X X }
+        MATLAB, C++ & HTML, CSS, JavaScript \\
+        Flask, Python & Soldering
+    \end{tabularx}
+\end{rsection}
 
 
 \rheader{ACTIVIES}
+\begin{rsection}
+    Michigan Ski Club \rdate{Aug 2019 -- Present} \\
+    Piano \rdate{2066 -- Present}
+\end{rsection}
 
 \end{document}
