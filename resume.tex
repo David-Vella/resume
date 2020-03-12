@@ -10,6 +10,16 @@
 \usepackage{enumitem}
 \usepackage{tabularx}
 
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\hypersetup{
+    colorlinks=true,     
+    urlcolor=blue,
+}
+
 \linespread{1.0}
 \geometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
 \pagenumbering{gobble}
@@ -28,6 +38,10 @@
 
 \newcommand{\ritem} {
     \vspace{-10pt} \item
+}
+
+\newcommand{\rurl}[1] {
+	\textcolor{blue}{\small{\uline{\url{#1}}}}
 }
 
 \newenvironment{rsection} {
@@ -58,7 +72,7 @@
     \vspace{5pt}
     248-760-4439 $\cdot$ davella@umich.edu \\
     7000 Willowing Oak Dr, White Lake, MI \\
-    https://github.com/David-Vella
+    \rurl{https://github.com/David-Vella}
 \end{center}
 
 \vspace{-10pt}
@@ -66,7 +80,7 @@
 \rheader{EDUCATION}
 \begin{rsection}
     University of Michigan, Ann Arbor, MI \rdate{Exptected Graduation: Apr 2023} \\
-    Studying Computer Science and Engineering \rdate{GPA: 4.00 / 4.00}
+    Studying Computer Science \rdate{GPA: 4.00 / 4.00}
     \vspace{5pt} \\
     \noindent Coursework: \\
     EECS 280 Programming and Data Structures \rdate{Winter 2020}
@@ -106,7 +120,7 @@
 
 \rheader{PERSONAL PROJECTS}
 \begin{rsection}
-    Snake Web Application (url: \textit{www.boredinclassgames.xyz}) \rdate{Dec 2019 -- Present}
+    Snake Web Application \hspace{5pt} \rurl{http://boredinclassgames.xyz} \rdate{Dec 2019 -- Present}
     \begin{rlist}
         \ritem Built a web app using Python and the Flask micro framework
         \ritem Programmed the snake game using JavaScript and created web pages using HTML and CSS
@@ -127,7 +141,7 @@
 \rheader{SKILLS}
 \begin{rsection}
     C++, Python, JavaScript, HTML, CSS \\
-    MS Word, PowerPoint, Excel
+    Windows, Linux
     % \begin{tabularx}{\textwidth}{ X X X X X }
     %     C++ & Python & JavaScript & HTML & CSS \\
     %     % soldering, MATLAB
