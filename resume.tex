@@ -1,56 +1,7 @@
-% Simple Resume Template by David Vella
+\input{config.tex}
 
-% DOCUMENT CONFIGURATION
-\documentclass[12pt]{article}
-
-\usepackage[letterpaper]{geometry}
-\usepackage{times}
-\usepackage{setspace}
-\usepackage{lipsum}
-\usepackage{enumitem}
-\usepackage{tabularx}
-
-\linespread{1.0}
-\geometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
-\pagenumbering{gobble}
-
-
-% HELPER COMMANDS & ENVIRONMENTS
-\newcommand{\rheader}[1] { 
-    \noindent{ \large \textbf{#1} \par }
-    \vspace{-10pt}
-    \noindent \rule{7.5in}{0.5pt} 
-}
-
-\newcommand{\rdate}[1]{
-    \hfill \textit{#1}
-}
-
-\newcommand{\ritem} {
-    \vspace{-10pt} \item
-}
-
-\newenvironment{rsection} {
-    \vspace{-5pt}
-    \par \medskip
-    \leftskip=2em
-    \noindent \ignorespaces
-} {
-    \par \medskip
-    \vspace{5pt}
-}
-
-\newenvironment{rlist} {
-    \begin{enumerate}[leftmargin=0.75in, label=$\bullet$]
-} {
-    \end{enumerate}
-    \vspace{-10pt}
-}
-
-
-
-% START OF DOCUMENT
 \begin{document}
+
 
 % LETTERHEAD
 \begin{center}
@@ -58,15 +9,15 @@
     \vspace{5pt}
     248-760-4439 $\cdot$ davella@umich.edu \\
     7000 Willowing Oak Dr, White Lake, MI \\
-    https://github.com/David-Vella
+    \rurl{https://github.com/David-Vella}
 \end{center}
-
 \vspace{-10pt}
+
 
 \rheader{EDUCATION}
 \begin{rsection}
     University of Michigan, Ann Arbor, MI \rdate{Exptected Graduation: Apr 2023} \\
-    Studying Computer Science and Engineering \rdate{GPA: 4.00 / 4.00}
+    Studying Computer Science \rdate{GPA: 4.00 / 4.00}
     \vspace{5pt} \\
     \noindent Coursework: \\
     EECS 280 Programming and Data Structures \rdate{Winter 2020}
@@ -106,7 +57,7 @@
 
 \rheader{PERSONAL PROJECTS}
 \begin{rsection}
-    Snake Web Application (url: \textit{www.boredinclassgames.xyz}) \rdate{Dec 2019 -- Present}
+    Snake Web Application \hspace{5pt} \rurl{http://boredinclassgames.xyz} \rdate{Dec 2019 -- Present}
     \begin{rlist}
         \ritem Built a web app using Python and the Flask micro framework
         \ritem Programmed the snake game using JavaScript and created web pages using HTML and CSS
@@ -127,7 +78,7 @@
 \rheader{SKILLS}
 \begin{rsection}
     C++, Python, JavaScript, HTML, CSS \\
-    MS Word, PowerPoint, Excel
+    Windows, Linux
     % \begin{tabularx}{\textwidth}{ X X X X X }
     %     C++ & Python & JavaScript & HTML & CSS \\
     %     % soldering, MATLAB
@@ -135,10 +86,11 @@
 \end{rsection}
 
 
-\rheader{ACTIVIES}
+\rheader{ACTIVITIES}
 \begin{rsection}
     Michigan Ski Club \rdate{Aug 2019 -- Present} \\
     Piano \rdate{2006 -- Present}
 \end{rsection}
+
 
 \end{document}
