@@ -1,88 +1,159 @@
-\input{config.tex}
+\documentclass[12pt]{article}
+\usepackage[letterpaper]{geometry}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{enumitem}
+\usepackage{tabularx}
 
-\begin{document}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\renewcommand{\ULdepth}{1.8pt}
+\hypersetup{colorlinks=true, urlcolor=blue}
+
+\linespread{1.0}
+\geometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in}
+\pagenumbering{gobble}
 
 
-% LETTERHEAD
-\begin{center}
+\newcommand{\rheader}[1] { 
+    \noindent{ 
+        \large 
+        \textbf{#1} 
+        \par 
+    }
+    \vspace{-10pt}
+    \noindent 
+    \rule{7.5in}{0.5pt} 
+}
+
+\newcommand{\rdate}[1] {
+    \hfill 
+    \textit{#1}
+}
+
+\newcommand{\ritem} {
+    \vspace{-10pt} 
+    \item
+}
+
+\newcommand{\rurl}[1] {
+	\textcolor{blue} {
+        \small{
+            \uline{
+                \url{#1}
+            }
+        }
+    }
+}
+
+\newenvironment{rsection} {
+    \vspace{-5pt}
+    \par 
+    \medskip
+    \leftskip=1em
+    \noindent 
+    \ignorespaces
+} {
+    \par 
+    \medskip
+    \vspace{5pt}
+}
+
+\newenvironment{rlist} {
+    \begin{enumerate}[leftmargin=0.5in, label=$\bullet$]
+} {
+    \end{enumerate}
+    \vspace{-10pt}
+}
+
+
+\begin{document} % -------------------- MAIN -------------------- %
+
+
+\begin{center} % LETTERHEAD
     {\Large \textbf{David F. Vella} \par}
     \vspace{5pt}
     248-760-4439 $\cdot$ davella@umich.edu \\
     7000 Willowing Oak Dr, White Lake, MI \\
-    \rurl{https://github.com/David-Vella}
+    \rurl{https://www.davidvella.me}
 \end{center}
 \vspace{-10pt}
 
 
 \rheader{EDUCATION}
 \begin{rsection}
-    University of Michigan, Ann Arbor, MI \rdate{Exptected Graduation: Apr 2023} \\
-    Studying Computer Science \rdate{GPA: 4.00 / 4.00}
+    \textbf{University of Michigan, Ann Arbor, MI} \rdate{Aug 2019 -- Dec 2022} \\
+    Bachelor of Science in Engineering - BSE, Computer Science \rdate{GPA: 3.96 / 4.00}
     \vspace{5pt} \\
-    \noindent Coursework: \\
-    EECS 280 Programming and Data Structures \rdate{Winter 2020}
+    \noindent Relevant Coursework: \\
+    \textbf{EECS 281 - Data Structures and Algorithms}
     \begin{rlist}
-        \ritem Algorithms, abstract and structured data types, recursion, pointers, testing and debugging
-        \ritem Large programming projects in C++
+        \ritem Algorithm analysis and O-notation; searching, sorting, recursive, and graph algorithms
+        \ritem Fundamental data structures including; stacks, priority queues, hash tables, search trees, and graphs
     \end{rlist}
-    ENGR 100 Intro Engineering Section 400 Autonomous Systems \rdate{Fall 2019}
+    \textbf{ENGR 100 - Intro Autonomous Systems}
     \begin{rlist}
-        \ritem Worked in a team to develop and implement control algorithms enabling a quadcopter \\ to autonomously navigate a maze
-        \ritem Wrote reports and delivered presentations on our teams progress and results
-        \ritem Programming in C++ and control system simulation using MATLAB 
-        %\ritem PID Controllers, digital and analog filters, IMU, ultrasonic and LiDAR sensors
-    \end{rlist}
-    ENGR 101 Intro Programming \rdate{Fall 2019}
-    \begin{rlist}
-        \ritem MATLAB, C++, data structures, algorithms, testing and debugging, style 
+        \ritem Worked in a team to design control algorithms enabling a quadcopter to autonomously navigate a maze
+        \ritem Hands on experience with PID controllers, digital and analog filters, IMU's, ultrasonic and LiDAR sensors
     \end{rlist}
 \end{rsection}
 
 
-\rheader{PROJECT EXPERIENCE}
+\rheader{EXPERIENCE}
 \begin{rsection}
-    FTC Robotics Team \#12505 -- Student Mentor \rdate{Sept 2018 -- Apr 2019}
+    \textbf{All Covered IT Services, Farmington Hills, MI} \rdate{May 2020 -- Aug 2020} \\
+    Deployment Team Member
     \begin{rlist}
-        \ritem Volunteered as a mentor to help my former middle school start a robotics team.
-        \ritem Guided middle school students through the design and assembly of a robot \\ using my experience from high school robotics.
+        \ritem Worked in a team to install software on a variety of platforms including Windows 10, macOS, iOS
+        \ritem Developed shell scripts that interact with inventory system REST APIs to automate workflows
     \end{rlist}
-    FRC Robotics Team \#67 -- Electrical \& Controls Lead \rdate{Jan 2015 -- Apr 2019}
+    \vspace{5pt}
+    \textbf{FIRST Robotics FRC Team \#67, Milford, MI} \rdate{Jan 2015 -- Apr 2019} \\
+    Electrical and Controls Lead
     \begin{rlist}
-        \ritem Led students through design and assembly of the robot's electrical and control system
-        \ritem Quickly diagnosed and resolved electrical and software issues during competition
-        \ritem Drove the robot during competition
+        \ritem Led students through the design and assembly critical electrical system components
+        \ritem Hands on experience with PWM, CAN, Encoders, IMU's, and cameras for robotics applications
     \end{rlist}
 \end{rsection}
 
 
-\rheader{PERSONAL PROJECTS}
+\rheader{PROJECTS}
 \begin{rsection}
-    Snake Web Application \hspace{5pt} \rurl{http://boredinclassgames.xyz} \rdate{Dec 2019 -- Present}
+    \textbf{Linux GPU Power Management Tool}  \rdate{Jun 2020 -- Aug 2020}
     \begin{rlist}
-        \ritem Built a web app using Python and the Flask micro framework
-        \ritem Programmed the snake game using JavaScript and created web pages using HTML and CSS
-        \ritem Implemented a database leaderboard system using SQLAlchemy
+        \ritem Developed software that forces GPU into low power state when not in use improving battery life on NVIDIA Optimus enabled laptops. Implemented in C and developed in a Linux environment
     \end{rlist}
-    % Tic-Tac-Toe AI \rdate{Aug 2019 -- Dec 2019}
-    % \begin{rlist}
-    %     \ritem Implemented various algorithms using Python to create a bot that never loses tic-tac-toe
-    % \end{rlist}
-    Flight Controller for Radio Control Aircraft \rdate{Aug 2018 -- Aug 2019}
+    \vspace{5pt}
+    \textbf{Radio Control Aircraft Flight Controller}  \rdate{Apr 2020 -- Jun 2020}
     \begin{rlist}
-        \ritem Developed and implemented control algorithms for flight stabilization of radio control aircraft
-        \ritem Programmed an Arduino microcontroller in C++ to read IMU data, decode user input signals, \\ and actuate servo motors
+        \ritem Developed and implemented control algorithms in C++ for autonomous cruise, takeoff, and landing
+        \ritem Developed libraries for digital signal processing, IMU computation, and I2C device communication
+    \end{rlist}
+    \vspace{5pt}
+    \textbf{Lightweight IMU Software Library} \rdate{Mar 2020 -- Apr 2020}
+    \begin{rlist}
+        \ritem Wrote a software library to compute orientation from raw gyroscope and accelerometer sensor data
+        \ritem Implemented quaternion math operations in C++ to accurately track orientation in real time
+    \end{rlist}
+    \vspace{5pt}
+    \textbf{Snake Web Application} \rdate{Dec 2019 -- Feb 2020}
+    \begin{rlist}
+        \ritem Developed a Flask web application to play snake with friends
+        \ritem Designed an API so the client can post and get scores from a leaderboard
     \end{rlist}
 \end{rsection}
 
 
 \rheader{SKILLS}
 \begin{rsection}
-    C++, Python, JavaScript, HTML, CSS \\
-    Windows, Linux
-    % \begin{tabularx}{\textwidth}{ X X X X X }
-    %     C++ & Python & JavaScript & HTML & CSS \\
-    %     % soldering, MATLAB
-    % \end{tabularx}
+    \textbf{Languages}: C, C++, Python, JavaScript, HTML, CSS \\
+    \textbf{Tools \& Technologies}: Git, Bash, Flask, Jinja2, Nginx \\
+    \textbf{Platforms}: Windows 10, Linux, AVR \\
+    \textbf{IDE}: Visual Studio Code
 \end{rsection}
 
 
